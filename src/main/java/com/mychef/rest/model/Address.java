@@ -1,4 +1,4 @@
-package com.mychef.rest.entity;
+package com.mychef.rest.model;
 
 /**
  * Author: Nguyen Duc Cuong
@@ -8,13 +8,14 @@ package com.mychef.rest.entity;
  */
 public class Address {
 
-//    private String addressID;
-//    private String streetAddress;
-//    private String addressLine2;
+    //    private String addressID;
+    private String streetAddress;
+    private String addressLine2;
     private String city;
     private String zipCode;
     private String state;
-    private String street;
+    private String zip;
+
 //    private float latitude;
 //    private float longitude;
 //    private String tag;
@@ -23,18 +24,18 @@ public class Address {
     }
 
     public Address(Address address) {
-//        this.streetAddress = address.getStreetAddress();
-//        this.addressLine2 = address.getAddressLine2();
+        this.streetAddress = address.getStreetAddress();
+        this.addressLine2 = address.getAddressLine2();
         this.city = address.getCity();
         this.zipCode = address.getZipCode();
         this.state = address.getState();
-        this.street = address.getStreet();
+        this.zip = address.getZip();
 //        this.latitude = address.getLatitude();
 //        this.longitude = address.getLongitude();
 //        this.tag = address.getTag();
     }
 
-//    public String getAddressID() {
+    //    public String getAddressID() {
 //        return addressID;
 //    }
 //
@@ -42,21 +43,21 @@ public class Address {
 //        this.addressID = addressID;
 //    }
 //
-//    public String getStreetAddress() {
-//        return streetAddress;
-//    }
-//
-//    public void setStreetAddress(String streetAddress) {
-//        this.streetAddress = streetAddress;
-//    }
-//
-//    public String getAddressLine2() {
-//        return addressLine2;
-//    }
-//
-//    public void setAddressLine2(String addressLine2) {
-//        this.addressLine2 = addressLine2;
-//    }
+    public String getStreetAddress() {
+        return streetAddress;
+    }
+
+    public void setStreetAddress(String streetAddress) {
+        this.streetAddress = streetAddress;
+    }
+
+    public String getAddressLine2() {
+        return addressLine2;
+    }
+
+    public void setAddressLine2(String addressLine2) {
+        this.addressLine2 = addressLine2;
+    }
 
     public String getCity() {
         return city;
@@ -80,14 +81,6 @@ public class Address {
 
     public void setState(String state) {
         this.state = state;
-    }
-
-    public String getStreet() {
-        return street;
-    }
-
-    public void setStreet(String street) {
-        this.street = street;
     }
 
     //    public String getCountry() {
@@ -122,13 +115,22 @@ public class Address {
 //        this.tag = tag;
 //    }
 
+
+    public String getZip() {
+        return zip;
+    }
+
+    public void setZip(String zip) {
+        this.zip = zip;
+    }
+
     public Address mapData(Address address) {
-//        this.streetAddress = address.getStreetAddress();
-//        this.addressLine2 = address.getAddressLine2();
+        this.streetAddress = address.getStreetAddress();
+        this.addressLine2 = address.getAddressLine2();
         this.city = address.getCity();
         this.zipCode = address.getZipCode();
         this.state = address.getState();
-        this.street = address.getStreet();
+        this.zip = address.getZip();
 //        this.latitude = address.getLatitude();
 //        this.longitude = address.getLongitude();
 //        this.tag = address.getTag();

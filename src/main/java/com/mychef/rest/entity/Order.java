@@ -2,6 +2,8 @@ package com.mychef.rest.entity;
 
 import java.util.List;
 
+import com.mychef.rest.model.Customer;
+import com.mychef.rest.model.Item;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -15,7 +17,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Order extends BaseEntity {
 
     private Long _id;
+    private String bakerId;
     private Baker baker;
+    private String customerId;
+    private Customer customer;
     private String status;
     private List<Item> items;
     private int total;
@@ -27,6 +32,14 @@ public class Order extends BaseEntity {
 
     public void set_id(Long _id) {
         this._id = _id;
+    }
+
+    public String getBakerId() {
+        return bakerId;
+    }
+
+    public void setBakerId(String bakerId) {
+        this.bakerId = bakerId;
     }
 
     public Baker getBaker() {
@@ -59,5 +72,21 @@ public class Order extends BaseEntity {
 
     public void setTotal(int total) {
         this.total = total;
+    }
+
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 }

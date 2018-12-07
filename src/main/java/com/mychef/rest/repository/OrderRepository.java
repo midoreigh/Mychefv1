@@ -14,4 +14,10 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 public interface OrderRepository extends MongoRepository<Order, Long> {
 
     List<Order> findAllByStatus(String status);
+
+    List<Order> findAllByStatusAndCustomerId(String status, String customerId);
+
+    List<Order> findAllByStatusAndBakerId(String status, String bakerId);
+
+
 }

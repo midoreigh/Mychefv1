@@ -14,4 +14,6 @@ import com.mychef.rest.entity.Food;
 public interface FoodService {
 
     Map<String, List<Food>> findAll();
+
+    Food saveFood(Food food);
 }

@@ -1,5 +1,6 @@
 package com.mychef.rest.entity;
 
+import com.mychef.rest.model.FoodSpecs;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -16,6 +17,7 @@ public class Food {
     private String foodName;
     private String foodImage;
     private Float price;
+    private String barkerId;
     private Baker baker;
     private FoodSpecs foodSpecs;
     private long available;
@@ -51,6 +53,14 @@ public class Food {
 
     public void setPrice(Float price) {
         this.price = price;
+    }
+
+    public String getBarkerId() {
+        return barkerId;
+    }
+
+    public void setBarkerId(String barkerId) {
+        this.barkerId = barkerId;
     }
 
     public Baker getBaker() {

@@ -1,4 +1,4 @@
-package com.mychef.rest.entity;
+package com.mychef.rest.model;
 
 /**
  * Author: Nguyen Duc Cuong

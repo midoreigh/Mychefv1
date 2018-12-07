@@ -1,8 +1,10 @@
 package com.mychef.rest.service;
 
 import java.util.List;
+import java.util.Map;
 
 import com.mychef.rest.entity.Order;
+import com.mychef.rest.model.Item;
 import com.mychef.rest.model.OrdersInformation;
 
 /**
@@ -13,8 +15,11 @@ import com.mychef.rest.model.OrdersInformation;
  */
 public interface OrderService {
 
-    OrdersInformation getOrdersInformation();
+    OrdersInformation getOrdersInformation(boolean isBaker);
 
-    List<Order> findAllByStatus(String status);
+    List<Order> findAllByStatus(String status, String userId, boolean isBaker);
 
+    void placeOrder(Map<String, List<Item>> foods) throws Exception;
+
+    boolean orderStatus(Order order) throws Exception;
 }

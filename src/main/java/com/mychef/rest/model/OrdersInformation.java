@@ -2,7 +2,6 @@ package com.mychef.rest.model;
 
 import java.util.List;
 
-import com.mychef.rest.entity.Contact;
 import com.mychef.rest.entity.Order;
 
 /**

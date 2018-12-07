@@ -1,4 +1,4 @@
-package com.mychef.rest.entity;
+package com.mychef.rest.model;
 
 /**
  * Author: Nguyen Duc Cuong
@@ -8,9 +8,18 @@ package com.mychef.rest.entity;
  */
 public class Item {
 
+    private Long foodId;
     private String foodName;
     private int count;
     private float price;
+
+    public Long getFoodId() {
+        return foodId;
+    }
+
+    public void setFoodId(Long foodId) {
+        this.foodId = foodId;
+    }
 
     public String getFoodName() {
         return foodName;

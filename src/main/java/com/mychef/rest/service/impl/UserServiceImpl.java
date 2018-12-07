@@ -5,10 +5,11 @@ import java.util.Optional;
 import javax.servlet.http.HttpServletRequest;
 
 import com.mychef.rest.common.MessageCodeDefinition;
-import com.mychef.rest.common.UserRoleConstant;
+import com.mychef.rest.entity.Baker;
 import com.mychef.rest.entity.User;
 import com.mychef.rest.exception.CoreException;
 import com.mychef.rest.model.CustomUserDetails;
+import com.mychef.rest.model.Customer;
 import com.mychef.rest.model.UserTokenState;
 import com.mychef.rest.repository.UserRepository;
 import com.mychef.rest.security.TokenHelper;
@@ -90,8 +91,12 @@ public class UserServiceImpl implements UserService {
             throw new CoreException(MessageCodeDefinition.EMAIL_EXIST_CODE, MessageCodeDefinition.EMAIL_EXIST_MESSAGE);
         }
         String password = user.getPassword();
-        user.setClassName(User.class.getName());
-        user.setVersion(1);
+        Customer customer = new Customer();
+        customer.setCustomerName(user.getName());
+        user.setCustomer(customer);
+        Baker baker = new Baker();
+        baker.setBakerName(user.getName());
+        user.setBaker(baker);
         user.setPassword(this.passwordEncoder.encode(password));
         this.userRepository.save(user);
 
