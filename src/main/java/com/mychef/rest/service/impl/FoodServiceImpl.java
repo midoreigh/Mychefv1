@@ -41,6 +41,7 @@ public class FoodServiceImpl implements FoodService {
         User user = this.userService.getProfile();
         food.setBaker(user.getBaker());
         food.setBarkerId(user.get_id());
+        food.setApproved(true);
         return this.foodRepository.save(food);
     }
 }

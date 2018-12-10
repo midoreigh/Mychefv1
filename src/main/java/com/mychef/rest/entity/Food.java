@@ -21,6 +21,7 @@ public class Food {
     private Baker baker;
     private FoodSpecs foodSpecs;
     private long available;
+    private boolean approved;
 
     @Id
     public Long get_id() {
@@ -85,5 +86,13 @@ public class Food {
 
     public void setAvailable(long available) {
         this.available = available;
+    }
+
+    public boolean getApproved() {
+        return approved;
+    }
+
+    public void setApproved(boolean approved) {
+        this.approved = approved;
     }
 }
