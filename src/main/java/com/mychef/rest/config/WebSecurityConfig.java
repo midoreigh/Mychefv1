@@ -67,6 +67,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/",
                         "/login",
                         "/auth/**",
+                        "/braintree/**",
                         "/webjars/**",
                         "/*.html",
                         "/favicon.ico",
